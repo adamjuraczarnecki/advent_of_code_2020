@@ -1,0 +1,35 @@
+html{
+	display: grid;
+	place-items: center;
+	background-color: #2d2d2d;
+	color: #E7E8EC;	
+}
+
+body {
+	width: 80Vw;
+	max-width: 500px;
+}
+
+header, main, footer {
+	border: 1px solid #E7E8EC;
+	margin: 1em;
+	padding: 1em;
+}
+
+a {
+	color: #E7E8EC;
+}
+
+p, h1, h2, ul {
+	margin: 0;
+}
+
+h2{
+	margin-bottom: 1em;
+}
+
+footer {
+	display: grid;
+	place-items: center;
+}
+
