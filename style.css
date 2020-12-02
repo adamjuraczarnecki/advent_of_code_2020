@@ -33,3 +33,7 @@ footer {
 	place-items: center;
 }
 
+li {
+	margin: 0.5em 0;
+}
+
