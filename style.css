@@ -10,7 +10,7 @@ body {
 	max-width: 500px;
 }
 
-header, main, footer {
+header, main, footer, section {
 	border: 1px solid #E7E8EC;
 	margin: 1em;
 	padding: 1em;
@@ -20,12 +20,20 @@ a {
 	color: #E7E8EC;
 }
 
-p, h1, h2, ul {
+p, h1, h2, ul, h3 {
 	margin: 0;
 }
 
 h2{
 	margin-bottom: 1em;
+}
+
+h3:after{
+	content: '\02795';
+	float: right;
+}
+.active:after {
+  content: "\2796"; 
 }
 
 footer {
@@ -37,3 +45,19 @@ li {
 	margin: 0.5em 0;
 }
 
+textarea {
+	box-sizing: border-box;
+	width: 100%;
+
+}
+
+button {
+	float: right;
+	margin-top: 1em;
+	padding: 0.5em 1em;
+}
+
+div {
+	overflow: hidden;
+	margin-top: 1em;
+}
