@@ -26,7 +26,7 @@ function parsePasports(input) {
 			pasports.push(pasport);
 			pasport = {};
 		} else {
-				input[i].split(' ').forEach(x => pasport[x.split(':')[0]] = x.split(':')[1])
+			input[i].split(' ').forEach(x => pasport[x.split(':')[0]] = x.split(':')[1])
 		}
 	}
 	return pasports
