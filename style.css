@@ -61,3 +61,8 @@ div {
 	overflow: hidden;
 	margin-top: 1em;
 }
+
+span {
+	color: #fff;
+	text-shadow: 0 0 5px #ffffff;
+}
