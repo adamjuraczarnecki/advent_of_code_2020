@@ -8,6 +8,7 @@ html{
 body {
 	width: 80Vw;
 	max-width: 500px;
+
 }
 
 header, main, footer, section {
@@ -42,7 +43,8 @@ footer {
 }
 
 li {
-	margin: 0.5em 0;
+	margin: 0;
+	list-style-type: '';
 }
 
 textarea {
@@ -65,4 +67,12 @@ div {
 span {
 	color: #fff;
 	text-shadow: 0 0 5px #ffffff;
+}
+
+li:before{
+	content: '*';
+	font-family: "Source Code Pro", monospace;
+	color: #ffff66;
+	font-size: 25px;
+	vertical-align: middle
 }
