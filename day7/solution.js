@@ -17,16 +17,13 @@ function solution1(input){
 
 function solution2(input){
 	const bags = getBagMap(input.filter(x => x != ''))
-	console.log(bags)
 	return getRequiredBags('shiny gold', bags)
 }
 
 function getRequiredBags(color, bags){
 	const rootBag = bags[color];
-	console.log(rootBag.contain)
 	
 	return rootBag.contain.reduce((count, innerBag) => {
-		// console.log(count + innerBag.count, '=', count, '+', innerBag.count)
 		return count + innerBag.count + innerBag.count * getRequiredBags(innerBag.name, bags)
 	}, 0)
 }
