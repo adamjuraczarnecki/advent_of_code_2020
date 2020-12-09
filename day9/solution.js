@@ -9,11 +9,9 @@ function job(input, preamble = 25){
 	const span2 = document.querySelector('#answer2')
 	span2.innerText = solution2(input, preamble)
 }
-	  
 
 function solution1(input, preamble){
 	const numbers = parseNumbers(input);
-	
 	for (let i = preamble; i < numbers.length; i++) {
 		if(!isSumInArray(numbers[i], numbers.slice(i - preamble, i)))
 			return numbers[i]
@@ -21,7 +19,6 @@ function solution1(input, preamble){
 }
 
 function solution2(input, preamble){
-
 	return findContiguousSet(solution1(input, preamble), parseNumbers(input))
 }
 
@@ -51,24 +48,3 @@ function isSumInArray(sum, arr){
 function parseNumbers(input){
 	return input.filter(x => x != '').map(x => parseInt(x))
 }
-
-const testInput = `35
-20
-15
-25
-47
-40
-62
-55
-65
-95
-102
-117
-150
-182
-127
-219
-299
-277
-309
-576`.split(/\r?\n/)
