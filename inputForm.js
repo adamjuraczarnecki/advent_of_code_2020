@@ -4,7 +4,11 @@ fetch('input.txt')
    
   document.querySelector('section a').addEventListener('click', formToggle, true)
   document.querySelector('button').addEventListener('click', function(){
-	job(document.querySelector('textarea').value.split(/\r?\n/))
+	if (document.body.contains(document.querySelector('select'))){
+		job(document.querySelector('textarea').value.split(/\r?\n/), parseInt(document.querySelector('select').value))
+	} else{
+		job(document.querySelector('textarea').value.split(/\r?\n/))
+	}
   })
    
    function formToggle(e){

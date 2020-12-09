@@ -76,3 +76,8 @@ li:before{
 	font-size: 25px;
 	vertical-align: middle
 }
+
+select {
+	padding: 0.5em 1em;
+	margin-top: 1em;
+}
