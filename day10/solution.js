@@ -31,14 +31,45 @@ function solution1(input){
 
 function solution2(input){
 	const numbers = parseNumbers(input);
-	const diffs = getDiffs(numbers)
+	numbers.pop();
+	const combinations = numbers.map((x, i) => (i == 0 ? 1 : 0));
+	for (let i = 0; i < combinations.length; i++) {
+		for (let ii = i - 3; ii < i; ii++) {
+			if (isMultiple(numbers[i], numbers[ii])) {
+				combinations[i] += combinations[ii];
+			}
+		}
+	}	
+	return combinations[combinations.length - 1]
 }
 
+function isMultiple(a, b){
+	return a - b <= 3
+}
+function parseNumbers(input){
+	const numbers = input.filter(x => x != '').map(x => parseInt(x))
+	numbers.push(0);
+	numbers.push(Math.max(...numbers) + 3)
+	return numbers.sort((a, b) => a - b)
+}
+
+function getDiffs(numbers){
+	const diffs = [];
+	for (let i = 0; i < numbers.length-1; i++){
+		const diff = numbers[i+1] - numbers[i];
+		diffs.push(diff);
+	}
+	return diffs
+}
+
+Array.prototype.count = function(element) {
+	return this.filter(x => x === element).length
+}
+
+// This works but is stupid as fuck, maby in a bigger machine not on a browser
 function solution22(input){
 	const numbers = parseNumbers(testInput);
 	const diffs = getDiffs(numbers);
-	
-	// This works but is stupid as fuck, maby in a bigger machine not on a browser
 	const max = numbers[numbers.length - 1]
 	let allPosibleCombination = getAllSubsets(numbers);
 	allPosibleCombination = allPosibleCombination.map(x => x.sort(((a, b) => a - b)))
@@ -77,23 +108,3 @@ const getAllSubsets =
         ),
         [[]]
       );
-
-function parseNumbers(input){
-	const numbers = input.filter(x => x != '').map(x => parseInt(x))
-	numbers.push(0);
-	numbers.push(Math.max(...input) + 3)
-	return numbers.sort((a, b) => a - b)
-}
-
-function getDiffs(numbers){
-	const diffs = [];
-	for (let i = 0; i < numbers.length-1; i++){
-		const diff = numbers[i+1] - numbers[i];
-		diffs.push(diff);
-	}
-	return diffs
-}
-
-Array.prototype.count = function(element) {
-	return this.filter(x => x === element).length
-}
