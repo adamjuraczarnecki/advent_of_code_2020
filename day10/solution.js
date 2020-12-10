@@ -10,19 +10,6 @@ function job(input, preamble = 25){
 	span2.innerText = solution2(input)
 }
 
-const testInput = `16
-16
-10
-15
-5
-1
-11
-7
-19
-6
-12
-4`.split(/\r?\n/)
-
 function solution1(input){
 	const numbers = parseNumbers(input);
 	const diffs = getDiffs(numbers);
