@@ -3,7 +3,7 @@ fetch(fileUrl)
    .then( r => r.text() )
    .then( t => job(t.split(/\r?\n/)) )
    
-function job(input, preamble = 25){
+function job(input){
 	const span = document.querySelector('#answer1')
 	span.innerText = solution1(input)
 	const span2 = document.querySelector('#answer2')
