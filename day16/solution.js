@@ -36,8 +36,8 @@ function solution2(input){
 	setPositions.forEach(x => console.log(`${x.name}: position: ${x.position}`))
 	const departurePositions = setPositions.filter(x => x.name.includes('departure'));
 	let multiplyDeparturePositions = 1;
+	console.log('\nYour Ticket Departure FIelds:')
 	for(let i = 0; i < departurePositions.length; i++){
-		console.log('Your Ticket Departure FIelds:')
 		console.log(`${departurePositions[i].name} - position: ${departurePositions[i].position}, value: ${myTicket.values[departurePositions[i].position]} `)
 		multiplyDeparturePositions *= myTicket.values[departurePositions[i].position]
 	}
