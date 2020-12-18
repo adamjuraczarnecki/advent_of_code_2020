@@ -81,3 +81,9 @@ select {
 	padding: 0.5em 1em;
 	margin-top: 1em;
 }
+
+ul {
+	column-gap: 1em;
+	columns: 3 100px;
+	padding: 0 0 0 1em;
+}
