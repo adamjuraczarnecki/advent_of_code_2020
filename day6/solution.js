@@ -39,6 +39,8 @@ function getGroupAnswersCount(group){
 }
 
 function splitToGroups(input){
+	// to avoid wrong result from pasted input without last blank line
+	input.push('');
 	let groups = [];
 	let = group = [];
 	for (let i = 0; i < input.length; i++){
