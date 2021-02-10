@@ -141,12 +141,11 @@ function adjacentSeats(input , i, ii){
 	const adjacentPositions = [ [i-1,ii-1], [i-1,ii], [i-1,ii+1],[i,ii-1],[i,ii+1], [i+1,ii-1], [i+1,ii], [i+1,ii+1]]
 	const adjacentSeats = []
 	
-	adjacentPositions.forEach(function(x){
-		
+	adjacentPositions.forEach(x =>{
 		try {
 			adjacentSeats.push(input[x[0]][x[1]]);
 		} catch (error) {}
-	}, this)
+	})
 	return adjacentSeats.filter(x => x!== null)
 }
 
